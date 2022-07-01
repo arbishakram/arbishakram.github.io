@@ -1,0 +1,8 @@
+@inproceedings{akram2017life,
+  title={Life savior: an integrated emergency response system},
+  author={Akram, Arbish and Anjum, Maria and Rehman, Mariam and Bukhary, Hafsah and Amir, Hifza and Qaisar, Rafia},
+  booktitle={2017 8th International Conference on Information Technology (ICIT)},
+  pages={1002--1006},
+  year={2017},
+  organization={IEEE}
+}
