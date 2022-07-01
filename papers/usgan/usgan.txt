@@ -1,0 +1,6 @@
+@article{akram2021us,
+  title={US-GAN: On the importance of Ultimate Skip Connection for Facial Expression Synthesis},
+  author={Akram, Arbish and Khan, Nazar},
+  journal={arXiv preprint arXiv:2112.13002},
+  year={2021}
+}
