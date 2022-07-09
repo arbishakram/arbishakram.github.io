@@ -1,3 +1,9 @@
+# Site settings
 theme: jekyll-theme-slate
+title: Arbish Akram
+email: 
+baseurl: ""
+url: "http://arbishakram.github.io"
+github_username:  arbishakram
 plugins:
   - jekyll-seo-tag
