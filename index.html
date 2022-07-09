@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
-<head>
+<head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<script async src="./analytics.js"></script><script type="text/javascript" src="./hidebib.js"></script>
 <title>Arbish Akram</title>
 <style type="text/css">
 	body
@@ -159,21 +160,6 @@
   ga('send', 'pageview');
 
 </script>
-
-<div class="home">
-  
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        <br>
-        {{ post.excerpt }}
-      </li>
-    {% endfor %}
-  </ul>
-
-</div>
 </head>
 
 
