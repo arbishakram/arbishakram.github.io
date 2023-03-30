@@ -1,0 +1,9 @@
+@ARTICLE{akram23sargan,
+  author={Akram, Arbish and Khan, Nazar},
+  journal={IEEE Transactions on Circuits and Systems for Video Technology}, 
+  title={SARGAN: Spatial Attention-based Residuals for Facial Expression Manipulation}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={1-1},
+  doi={10.1109/TCSVT.2023.3255243}}
