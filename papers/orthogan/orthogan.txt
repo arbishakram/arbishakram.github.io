@@ -1,0 +1,8 @@
+@inproceedings{akram2018-orthogan,
+    author = {Akram, Arbish and Khan, Nazar},
+    title = {{OrthoGAN: Visualizing teeth after Orthodontics treatment using Generative Models}},
+    booktitle = {},
+    url={https://arbishakram.github.io/papers/orthogan/orthogan_preprint.pdf}
+    month = {},
+    year = {2018},
+}
