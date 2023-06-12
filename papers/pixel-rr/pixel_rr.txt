@@ -1,0 +1,7 @@
+@inproceedings{akram2021-pixel_fes,
+    author = {Akram, Arbish and Khan, Nazar},
+    title = {{Pixel-based Facial Expression Synthesis}},
+    booktitle = {International Conference on Pattern Recognition (ICPR)},
+    month = {January},
+    year = {2021},
+}
