@@ -1,0 +1,9 @@
+@ARTICLE{akram23lsrf,
+  author={Akram, Arbish and Khan, Nazar},
+  journal={Multimedia Tools and Applications}, 
+  title={LSRF: Localized and Sparse Receptive Fields for Linear Facial Expression Synthesis based on Global Face Context}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={1-1},
+  doi={10.1007/s11042-023-16822-8}}
