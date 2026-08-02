@@ -20,12 +20,10 @@
 		height: 1px;
 		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 	}
-
 	table
 	{
 		padding: 5px;
 	}
-
 	table.pub_table,td.pub_td1,td.pub_td2
 	{
 		border-collapse: collapse;
@@ -51,7 +49,6 @@
 	tr {
 		background-color: #FFF;
 	}
-
 	div#container
 	{
 		margin-left: auto;
@@ -107,12 +104,8 @@
 		background-color: #FFF;
 		padding: 10px 10px 10px 10px;
 		margin: 10px 10px 10px 10px;
-		//border: 1px solid #AAA;
 	}
 	body {
-		background-color: #FFF;
-	}
-	#personal_info {
 		background-color: #FFF;
 	}
 	p.announcement {
@@ -131,8 +124,8 @@
 	img.teaser_img2 {
 		width: 206px;
 		display: block;
-    margin-left: auto;
-    margin-right: auto;
+		margin-left: auto;
+		margin-right: auto;
 		margin-top: 5px;
 		margin-bottom: 5px;
 		border: 0px solid black
@@ -147,81 +140,125 @@
 		padding: 16px;
 		vertical-align: top
 	}
-
-
+	table.teach_table
+	{
+		border-collapse: collapse;
+		width: auto;
+	}
+	table.teach_table td
+	{
+		padding: 10px;
+		vertical-align: left;
+		border-bottom: 1px solid #E5E5E5;
+	}
+	td.course_name
+	{
+		width: auto;
+		padding-right: 0px;
+		font-weight: 500;
+	}
+	td.course_links
+	{
+		text-align: left;
+	}
+	td.course_links a
+	{
+		margin-right: 20px;
+	}
+	td.profile_photo
+	{
+		width: 200px;
+		vertical-align: top;
+	}
+	td.profile_content
+	{
+		vertical-align: top;
+	}
 </style>
-
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
   ga('create', 'UA-24665197-4', 'auto');
   ga('send', 'pageview');
-
 </script>
 </head>
-
-
 <body>
 	<div id="container">
-
 	<div class='section_div'>
 	<table id="personal_info">
 	<tr>
-	<td><img class="photo_of_me" src="papers/arbish.png" width=180px style="border: 1px solid black; float:left; margin-right:15px"/></td>
-	<td>
+	<td class="profile_photo"><img class="photo_of_me" src="arbish2023.jpg" width=180px style="border: 1px solid black; float:left; margin-right:15px"/></td>
+	<td class="profile_content">
 	<div id="DocInfo">
 		<h1>Arbish Akram</h1>
-		<h4>PhD Student <br/>
-                PUCIT<br/>
-		arbishakram [at] pucit [dot] edu [dot] pk.</h4>
+		<p>I completed my PhD in the Department of Computer Science at the University of the Punjab (PUCIT), advised by <a href='http://faculty.pucit.edu.pk/nazarkhan/'> Dr. Nazar Khan</a>. I am currently serving as a Lecturer in the Department of Computer Science at Government College University (GCU), Lahore. <br>
+	 	My research interests are in computer vision, machine learning, deep learning and image processing.</p>
+		<h4>arbishakram [at] gcu [dot] edu [dot] pk / arbishakram [at] gmail [dot] com</h4>		
 		<a href="https://scholar.google.com/citations?user=9uXz_dIAAAAJ">Google Scholar</a> / <a href="https://github.com/arbishakram">GitHub</a> 
-	</div><br>
+	</div>
 	</td>
 	</tr>
 	</table>
-
-<div class='section_div'>
-	<h2>About me</h2>
-	<p>I am a PhD student in the Department of Computer Science at the University of the Punjab, advised by <a href='http://faculty.pucit.edu.pk/nazarkhan/'> Dr. Nazar Khan</a>. <br>
-	 My research interests are in computer vision, machine learning, deep learning and image processing.
-	<br>
 </div>
 <hr>
-
-
-
-	<div class='section_div' id='Papers'>
-
-	<h2>Research</h2>
-
-	<table class="pub_table">
+	<div class='section_div' id='Teaching'>
+	<h2>Teaching</h2>
+	<table class="teach_table">
 	<tr>
-	 <td class="pub_td1"><div class="teaser_img_div"><img class="teaser_img2" src='papers/lsrf/lsrf_teaser.png'/></a></div></td>
+	 <td class="course_name"><a href="teaching/pf.html">Programming Fundamentals</a></td>
+	 <td class="course_links">Spring 25, Spring 26</td>
+	</tr>
+	<tr>
+	 <td class="course_name"><a href="teaching/oop.html">Object Oriented Programming</a></td>
+	 <td class="course_links">Spring 25, Fall 25</td>
+	</tr>
+	<tr>
+	 <td class="course_name"><a href="#">Intro to Computer Vision</a></td>
+	 <td class="course_links">Fall 25</td>
+	</tr>
+	</table>
+	</div>
+	<hr>
+	<div class='section_div' id='research'>
+	<h2>Research</h2>
+	<table class="pub_table">
+	
+	<tr>
+	 <td class="pub_td1"><div class="teaser_img_div"><img class="teaser_img2" src='research/reggan/reggan_teaser.png'/></a></div></td>
+	 <td class="pub_td2"><b>RegGAN: Improving Generative Adversarial Network Generalization for Facial Expression Synthesis</b>
+	  <br>Arbish Akram, <a href='http://faculty.pucit.edu.pk/nazarkhan/'>Nazar Khan</a> and <a href='https://itu.edu.pk/faculty-itu/dr-arif-mahmood/'>Arif Mahmood</a>
+          <br><i>Multimedia Tools and Applications (MTAP, 2026)</i>.
+          <br>[<a href="https://link.springer.com/article/10.1007/s11042-026-21213-w">Paper</a>]
+	  [<a href="https://arxiv.org/abs/2603.15648">arXiv</a>]
+	  [<a href="https://github.com/arbishakram/RegGAN">Code</a>]
+          [<a href="research/reggan/reggan.txt">Bibtex</a>]          
+	</td></tr>
+	<tr>
+	 <td class="pub_td1"><div class="teaser_img_div"><img class="teaser_img2" src='research/lsrf/lsrf_teaser.png'/></a></div></td>
 	 <td class="pub_td2"><b>LSRF: Localized and Sparse Receptive Fields for Linear Facial Expression Synthesis based on Global Face Context</b>
 	  <br>Arbish Akram and <a href='http://faculty.pucit.edu.pk/nazarkhan/'>Nazar Khan</a>
           <br><i>Multimedia Tools and Applications (MTAP, 2023)</i>.
           <br>[<a href="https://link.springer.com/article/10.1007/s11042-023-16822-8">Paper</a>]
 	  [<a href="https://rdcu.be/dmkiU">SharedIt</a>]
 	  [<a href="https://github.com/arbishakram/LSRF-FES">Code</a>]
-          [<a href="papers/lsrf/bib.txt">Bibtex</a>]          
+          [<a href="research/lsrf/bib.txt">Bibtex</a>]          
 	</td></tr>
 		
         <tr>
-	 <td class="pub_td1"><div class="teaser_img_div"><img class="teaser_img2" src='papers/sargan/sargan-teaser.png'/></a></div></td>
+	 <td class="pub_td1"><div class="teaser_img_div"><img class="teaser_img2" src='research/sargan/sargan-teaser.png'/></a></div></td>
 	 <td class="pub_td2"><b>SARGAN: Spatial Attention-based Residuals for Facial Expression Manipulation</b>
 	  <br>Arbish Akram and <a href='http://faculty.pucit.edu.pk/nazarkhan/'>Nazar Khan</a>
           <br><i>IEEE Transactions on Circuits and Systems for Video Technology (TCSVT, 2023)</i>.
           <br>[<a href="https://ieeexplore.ieee.org/document/10065495">Paper</a>]
 	  [<a href="http://arxiv.org/abs/2303.17212">arXiv</a>]
 	  [<a href="https://github.com/arbishakram/SARGAN">Code</a>]
-          [<a href="papers/sargan/sargan.txt">Bibtex</a>]	 
+          [<a href="research/sargan/sargan.txt">Bibtex</a>]	 
 	</td></tr>	
 		
 	<tr>
-	 <td class="pub_td1"><img class="teaser_img2" width="400" src='papers/usgan/usgan-teaser.jpg'/></a></td>
+	 <td class="pub_td1"><img class="teaser_img2" width="400" src='research/usgan/usgan-teaser.jpg'/></a></td>
 	 <td class="pub_td2"><b>US-GAN: On the importance of Ultimate Skip Connection for Facial Expression Synthesis</b>
 	  <br>Arbish Akram and <a href='http://faculty.pucit.edu.pk/nazarkhan/'>Nazar Khan</a>
           <br><i>Multimedia Tools and Applications (MTAP, 2023)</i>.
@@ -229,11 +266,10 @@
           [<a href="https://rdcu.be/ddU2s">SharedIt</a>]
           [<a href="https://arxiv.org/abs/2112.13002">arXiv</a>]
           [<a href="https://github.com/arbishakram/US-GAN">Code</a>]
-          [<a href="papers/usgan/usgan.txt">Bibtex</a>]	  
+          [<a href="research/usgan/usgan.txt">Bibtex</a>]	  
 	</td></tr>
-
 	<tr>
-	 <td class="pub_td1"><div class="teaser_img_div"><img class="teaser_img" src='papers/pixel-rr/pixel-rr.png'/></a></div></td>
+	 <td class="pub_td1"><div class="teaser_img_div"><img class="teaser_img" src='research/pixel-rr/pixel-rr.png'/></a></div></td>
 	 <td class="pub_td2"><b>Pixel-based Facial Expression Synthesis</b>
          <br>Arbish Akram and <a href='http://faculty.pucit.edu.pk/nazarkhan/'>Nazar Khan</a>
 	 <br><i>25th International Conference on Pattern Recognition (ICPR 2021)</i>. 
@@ -241,21 +277,21 @@
 	 [<a href="https://arxiv.org/abs/2010.14397">arXiv</a>]
 	 [<a href="http://faculty.pucit.edu.pk/nazarkhan/work/expression_mapping/pixel_fes/ICPR2020_presentation.pdf">Slides</a>] 
 	 [<a href="http://faculty.pucit.edu.pk/nazarkhan/work/expression_mapping/pixel_fes/ICPR2020_poster.pdf">Poster</a>]
-         [<a href="papers/pixel-rr/pixel_rr.txt">Bibtex</a>] 
+         [<a href="research/pixel-rr/pixel_rr.txt">Bibtex</a>] 
 	</td></tr>
 	
 	<tr>
-	 <td class="pub_td1"><div class="teaser_img_div"><img class="teaser_img" src='papers/orthogan/orthogan_teaser.png'/></a></div></td>
+	 <td class="pub_td1"><div class="teaser_img_div"><img class="teaser_img" src='research/orthogan/orthogan_teaser.png'/></a></div></td>
 	 <td class="pub_td2"><b>OrthoGAN: Visualizing teeth after Orthodontics treatment using Generative Models</b>
          <br>Arbish Akram and <a href='http://faculty.pucit.edu.pk/nazarkhan/'>Nazar Khan</a>
 <!-- 	 <br><i></i>arXiv 2021.  -->
-	 <br>[<a href="papers/orthogan/orthogan_preprint.pdf">Preprint</a>]
-         [<a href="papers/orthogan/orthogan.txt">Bibtex</a>]  
+	 <br>[<a href="research/orthogan/orthogan_preprint.pdf">Preprint</a>]
+         [<a href="research/orthogan/orthogan.txt">Bibtex</a>]  
 	</td></tr>
 	
 	
 	<tr>
-	 <td class="pub_td1"><div class="teaser_img_div"><img class="teaser_img" src='papers/mr/mr.png'/></a></div></td>
+	 <td class="pub_td1"><div class="teaser_img_div"><img class="teaser_img" src='research/mr/mr.png'/></a></div></td>
 	 <td class="pub_td2"><b>Masked Linear Regression for Learning Local Receptive Fields for Facial Expression Synthesis</b>
          <br><a href='http://faculty.pucit.edu.pk/nazarkhan/'>Nazar Khan</a>, <span class="font-weight-bold">Arbish Akram</span>, <a href='https://itu.edu.pk/faculty-itu/dr-arif-mahmood/'>Arif Mahmood</a>, Sania Ashraf and Kashif Murtaza
 	 <br><i>International Journal of Computer Vision (IJCV, 2020)</i>. 
@@ -263,24 +299,18 @@
          [<a href="https://arxiv.org/abs/2011.09104">arXiv</a>]
 	 [<a href="http://faculty.pucit.edu.pk/nazarkhan/work/expression_mapping/presentation_itu_15_10_2019.pdf">Slides</a>]	
 	 [<a href="https://github.com/arbishakram/masked_regression_code">Code</a>] 
-	 [<a href="papers/mr/mr.txt">Bibtex</a>]		
+	 [<a href="research/mr/mr.txt">Bibtex</a>]		
 	</td></tr>
-
 	<tr>
-	 <td class="pub_td1"><div class="teaser_img_div"><img class="teaser_img" src='papers/lifesavior/lifesavior.png'/></a></div></td>
+	 <td class="pub_td1"><div class="teaser_img_div"><img class="teaser_img" src='research/lifesavior/lifesavior.png'/></a></div></td>
 	 <td class="pub_td2"><b>Life Savior: An Integrated Emergency Response System</b>
          <br>Arbish Akram, Maria Anjum, Mariam Rehman, Hafsah Bukhary, Hifza Amir and Rafia Qaisar
 	 <br><i>8th International Conference on Information Technology (ICIT, 2017)</i>. 
 	 <br>[<a href="https://ieeexplore.ieee.org/document/8079981">Paper</a>]
-         [<a href="papers/lifesavior/lifesavior.txt">Bibtex</a>]		
+         [<a href="research/lifesavior/lifesavior.txt">Bibtex</a>]		
 	</td></tr>
-
-
-
 	</table>
-
-
-
+	</div>
 </body>
 <div style="display:none">
 <!-- GoStats JavaScript Based Code -->

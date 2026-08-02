@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <title>Programming Fundamentals &mdash; Arbish Akram</title> -->
+<style>
+  body
+  {
+    width:1400px;
+    text-align: center;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    font-size:16px;
+    background-color: #FFF;
+  }
+  hr
+  {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    margin: 8px 0 24px;
+  }
+  div#container
+  {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+    text-align: left;
+    position: relative;
+    background-color: #FFF;
+  }
+  .section_div {
+    background-color: #FFF;
+    padding: 10px 10px 10px 10px;
+    margin: 10px 10px 10px 10px;
+  }
+  h4,h3,h2,h1
+  {
+    color: #3B3B3B;
+  }
+  h1 { font-size: 26px; font-weight: normal; margin-bottom: 4px; }
+  h2 {
+    font-size: 15px; font-weight: bold; letter-spacing: 0.05em;
+    font-family: Arial, sans-serif; text-transform: uppercase;
+    margin: 28px 0 10px;
+  }
+  p { color: #000; margin-bottom: 20px; font-size: 15px; }
+  a:link,a:visited
+  {
+    color: #1367a7;
+    text-decoration: none;
+  }
+  a:hover { text-decoration: underline; }
+
+  .breadcrumb {
+    font-family: Arial, sans-serif; font-size: 13px; color: #9B9B9B;
+    margin-bottom: 22px;
+  }
+  .breadcrumb span { margin: 0 5px; }
+
+  .course-meta {
+    font-family: Arial, sans-serif; font-size: 14px; color: #9B9B9B;
+    margin-bottom: 20px;
+  }
+
+  /* Schedule table */
+  table.sched {
+    width: 100%; border-collapse: collapse;
+    font-size: 15px; margin-bottom: 12px;
+  }
+  table.sched th {
+    text-align: left; padding: 7px 10px;
+    border-bottom: 1px solid #E5E5E5; font-weight: 700; color: #3B3B3B;
+  }
+  table.sched td { padding: 6px 10px; border-bottom: 1px solid #E5E5E5; vertical-align: top; }
+  table.sched tr:last-child td { border-bottom: none; }
+  table.sched .week { color: #9B9B9B; width: 52px; }
+  table.sched .topic { width: auto; }
+  table.sched .slides a, table.sched .code a { margin-right: 6px; }
+  table.sched .topic-main { color: #3B3B3B; font-weight: 700; }
+  table.sched .topic-sub { color: #9B9B9B; font-size: 13px; margin-top: 2px; }
+
+  /* Resources list */
+  ul.res { padding-left: 22px; font-size: 15px; margin-bottom: 12px; }
+  ul.res li { margin-bottom: 5px; }
+
+  footer {
+    margin-top: 56px; padding-top: 14px; border-top: 1px solid #e8e8e8;
+    font-family: Arial, sans-serif; font-size: 12.5px; color: #9B9B9B;
+  }
+</style>
+</head>
+<body>
+	<div id="container">
+	<div class='section_div'>
+
+  <!-- <p class="breadcrumb"><a href="../index.html">Arbish Akram</a> <span>&rsaquo;</span> Programming Fundamentals</p> -->
+
+  <h1>Programming Fundamentals</h1>
+  <p class="course-meta">
+    Instructor: <a href="../index.html">Arbish Akram</a>
+  </p>
+
+  <hr>
+  <!-- <h2>Course Description</h2> -->
+  <p>
+    This course introduces the foundational concepts of programming using C++.  Students learn problem solving, algorithm design, and the core constructs of
+    structured programming including variables, control flow, functions, arrays, and pointers. No prior programming experience is required.
+  </p>
+
+  <!-- <h2>Objectives</h2>
+  <p>By the end of this course students will be able to:</p>
+  <ul class="res">
+    <li>Understand the basic structure and execution model of a C++ program.</li>
+    <li>Design algorithms and translate them into working code.</li>
+    <li>Use control structures, functions, arrays, and basic file I/O.</li>
+    <li>Debug and test programs systematically.</li>
+  </ul> -->
+
+  <h2>Text</h2>
+  <ol class="res">
+    <li> <a href="https://faculty.ksu.edu.sa/sites/default/files/c_how_to_program_with_an_introduction_to_c_global_edition_8th_edition.pdf">C++ How to Program by Paul J. Deitel and Harvey Deitel, 8th Edition </a></li>
+    <li> <a href="https://staff.emu.edu.tr/sebnemcoban/Documents/_itec243/StartingOutwithC++.pdf">Starting Out with C++ by Tony Gaddis, 8th Edition</a> </li>
+  </ol>
+
+
+  <h2>Grading</h2>
+  <table class="sched">
+    <thead>
+      <tr>
+        <th>Assignments</th>
+        <th>Quizzes</th>
+        <th>Midterm Exam</th>
+        <th>Final Exam</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>5%</td><td>25%</td><td>20%</td><td>50%</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Schedule</h2>
+  <table class="sched">
+    <thead>
+      <tr>
+        <th class="week">Week</th>
+        <th class="topic">Topics</th>
+        <th>Slides</th>
+        <th>Quizzes</th>
+        <th>Assignments</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="week">1</td>
+        <td>
+          <div class="topic-main">Introduction to Programming</div>
+          <div class="topic-sub">Compiler vs. Interpreter, C++ Development Environment</div>
+        </td>
+        <td class="slides"><a href="#">Slides</a></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="week">2</td>
+        <td>
+          <div class="topic-main">Variables and Operators</div>
+          <div class="topic-sub">Data Types, Assignment and Relational Operators</div>
+        </td>
+        <td class="slides"><a href="#">Slides</a></td>
+        <td>Q1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="week">3</td>
+        <td>
+          <div class="topic-main">Conditional Logic</div>
+          <div class="topic-sub">Logical and Bitwise Operators, Unary Operators, <code>if</code> / <code>if-else</code> / <code>if-else-if</code></div>
+        </td>
+        <td class="slides"><a href="#">Slides</a></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="week">4</td>
+        <td>
+          <div class="topic-main">Conditional Statements</div>
+          <div class="topic-sub">Nested <code>if</code>, <code>switch</code>, Menu-Driven Programs, Character Comparison</div>
+        </td>
+        <td class="slides"><a href="#">Slides</a></td>
+        <td>Q2</td>
+        <td>A1</td>
+      </tr>
+      <tr>
+        <td class="week">5</td>
+        <td>
+          <div class="topic-main">Loops</div>
+          <div class="topic-sub"><code>while</code>, <code>do-while</code>, <code>for</code></div>
+        </td>
+        <td class="slides"><a href="#">Slides</a></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="week">6</td>
+        <td>
+          <div class="topic-main">Functions I</div>
+          <div class="topic-sub">Global vs. Local Variables</div>
+        </td>
+        <td class="slides"><a href="#">Slides</a></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="week">7</td>
+        <td>
+          <div class="topic-main">Functions II</div>
+          <div class="topic-sub">Call Stack and Activation Records, Pass-by-Value vs. Pass-by-Reference, Inline Functions, Static Variables, Overloading</div>
+        </td>
+        <td class="slides"><a href="#">Slides</a></td>
+        <td>Q4</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="week">8</td>
+        <td>
+          <div class="topic-main">Midterm Exam</div>
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="week">9</td>
+        <td>
+          <div class="topic-main">Arrays</div>
+          <div class="topic-sub">Declaration and Initialization, Out-of-Bounds Access, Passing Arrays to Functions</div>
+        </td>
+        <td class="slides"><a href="#">Slides</a></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="week">10</td>
+        <td>
+          <div class="topic-main">Arrays II</div>
+          <div class="topic-sub">Character and String Arrays, Static vs. Automatic Local Arrays, Constant Arrays, Multi-dimensional Arrays</div>
+        </td>
+        <td class="slides"><a href="#">Slides</a></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="week">11</td>
+        <td>
+          <div class="topic-main">Arrays III</div>
+          <div class="topic-sub">Linear Search, Binary Search, Bubble Sort, Selection Sort</div>
+        </td>
+        <td class="slides"><a href="#">Slides</a></td>
+        <td>Q5</td>
+        <td>A3</td>
+      </tr>
+      <tr>
+        <td class="week">12</td>
+        <td>
+          <div class="topic-main">Recursion and Pointers I</div>
+          <div class="topic-sub">Declaration and Initialization, Reference and Dereference Operators, Pointer Operators</div>
+        </td>
+        <td class="slides"><a href="#">Slides</a></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="week">13</td>
+        <td>
+          <div class="topic-main">Pointers II</div>
+          <div class="topic-sub">Pass-by-Value vs. Pass-by-Reference, Pointer Arithmetic, Passing Pointers to Functions, Pointers and Arrays, Arrays of Pointers</div>
+        </td>
+        <td class="slides"><a href="#">Slides</a></td>
+        <td>Q6</td>
+        <td>A4</td>
+      </tr>
+      <tr>
+        <td class="week">14</td>
+        <td>
+          <div class="topic-main">Structures and Dynamic Memory</div>
+          <div class="topic-sub">Structures, Dynamic Memory Allocation</div>
+        </td>
+        <td class="slides"><a href="#">Slides</a></td>
+        <td>Q7</td>
+        <td>A5</td>
+      </tr>
+      <tr>
+        <td class="week">15</td>
+        <td>
+          <div class="topic-main">File Processing</div>
+          <div class="topic-sub">Reading and Writing Text Files, <code>ifstream</code> and <code>ofstream</code>, Formatted File I/O</div>
+        </td>
+        <td class="slides"><a href="#">Slides</a></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="week">16</td>
+        <td>
+          <div class="topic-main">Pseudo-Random Number Generation</div>
+          <div class="topic-sub"><code>rand()</code> and <code>srand()</code>, Generating Numbers in a Range, Simple Simulations</div>
+        </td>
+        <td class="slides"><a href="#">Slides</a></td>
+        <td>Q8</td>
+        <td>A6</td>
+      </tr>     
+    </tbody>
+  </table>
+
+  <h2>Assignments</h2>
+  <ul class="res">
+    <li><a href="#">Assignment 1</a>  Conditional Statements</li>
+    <li><a href="#">Assignment 2</a>  Loops</li>
+    <li><a href="#">Assignment 3</a>  Arrays and Sorting</li>
+    <li><a href="#">Assignment 4</a>  Pointers</li>
+    <li><a href="#">Assignment 5</a>  Structures and Dynamic Memory</li>
+    <li><a href="#">Assignment 6</a>  File Processing and Random Number Generation</li>
+  </ul>
+
+  <h2>Policies</h2>
+  <p>
+    Attendance is mandatory. All submitted work must be your own; plagiarism will result in a zero grade for the assessment.
+  </p>
+
+
+	</div>
+	</div>
+</body>
+</html>

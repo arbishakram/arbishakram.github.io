@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Object Oriented Programming &mdash; Arbish Akram</title>
+<style>
+  body
+  {
+    width:1400px;
+    text-align: center;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    font-size:16px;
+    background-color: #FFF;
+  }
+  hr
+  {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    margin: 8px 0 24px;
+  }
+  div#container
+  {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+    text-align: left;
+    position: relative;
+    background-color: #FFF;
+  }
+  .section_div {
+    background-color: #FFF;
+    padding: 10px 10px 10px 10px;
+    margin: 10px 10px 10px 10px;
+  }
+  h4,h3,h2,h1
+  {
+    color: #3B3B3B;
+  }
+  h1 { font-size: 26px; font-weight: normal; margin-bottom: 4px; }
+  h2 {
+    font-size: 15px; font-weight: bold; letter-spacing: 0.05em;
+    font-family: Arial, sans-serif; text-transform: uppercase;
+    margin: 28px 0 10px;
+  }
+  p { color: #000; margin-bottom: 20px; font-size: 15px; }
+  a:link,a:visited
+  {
+    color: #1367a7;
+    text-decoration: none;
+  }
+  a:hover { text-decoration: underline; }
+
+  .breadcrumb {
+    font-family: Arial, sans-serif; font-size: 13px; color: #9B9B9B;
+    margin-bottom: 22px;
+  }
+  .breadcrumb span { margin: 0 5px; }
+
+  .course-meta {
+    font-family: Arial, sans-serif; font-size: 14px; color: #9B9B9B;
+    margin-bottom: 20px;
+  }
+
+  table.sched {
+    width: 100%; border-collapse: collapse;
+    font-size: 15px; margin-bottom: 12px;
+  }
+  table.sched th {
+    text-align: left; padding: 7px 10px;
+    border-bottom: 1px solid #E5E5E5; font-weight: 700; color: #3B3B3B;
+  }
+  table.sched td { padding: 6px 10px; border-bottom: 1px solid #E5E5E5; vertical-align: top; }
+  table.sched tr:last-child td { border-bottom: none; }
+  table.sched .week { color: #9B9B9B; width: 52px; }
+  table.sched .topic { width: auto; }
+  table.sched .slides a { margin-right: 6px; }
+  table.sched .topic-main { color: #3B3B3B; font-weight: 700; }
+  table.sched .topic-sub { color: #9B9B9B; font-size: 13px; margin-top: 2px; }
+
+  ul.res { padding-left: 22px; font-size: 15px; margin-bottom: 12px; }
+  ul.res li { margin-bottom: 5px; }
+
+  footer {
+    margin-top: 56px; padding-top: 14px; border-top: 1px solid #e8e8e8;
+    font-family: Arial, sans-serif; font-size: 12.5px; color: #9B9B9B;
+  }
+</style>
+</head>
+<body>
+	<div id="container">
+	<div class='section_div'>
+
+  <!-- <p class="breadcrumb"><a href="../index.html">Arbish Akram</a> <span>&rsaquo;</span> Object Oriented Programming</p> -->
+
+  <h1>Object Oriented Programming</h1>
+  <p class="course-meta">
+    Instructor: <a href="../index.html">Arbish Akram</a>
+  </p>
+
+  <hr>
+
+  <!-- <h2>Course Description</h2> -->
+  <p>
+    This course covers the principles and practice of object-oriented programming using C++.
+    Building on procedural programming, students learn to design programs using classes,
+    objects, inheritance, polymorphism, and templates. Emphasis is placed on clean design,
+    reusability, and real-world problem solving.
+  </p>
+
+  <!-- <h2>Objectives</h2>
+  <p>By the end of this course students will be able to:</p>
+  <ul class="res">
+    <li>Design and implement classes with appropriate encapsulation.</li>
+    <li>Apply inheritance and polymorphism to build extensible programs.</li>
+    <li>Use operator overloading, templates, and the STL effectively.</li>
+    <li>Handle exceptions and manage dynamic resources safely.</li>
+  </ul> -->
+
+  <h2>Prerequisites</h2>
+  <p>Programming Fundamentals.</p>
+
+  <h2>Text</h2>
+  <!-- <ul class="res"> -->
+    <!-- <li>Object-Oriented Programming in C++ &mdash; Robert Lafore <em>(primary)</em></li> -->
+    <!-- <li>The C++ Programming Language &mdash; Bjarne Stroustrup</li> -->
+  <!-- </ul> -->
+
+  <h2>Grading</h2>
+  <table class="sched">
+    <thead>
+      <tr>
+        <th>Assignments</th>
+        <th>Quizzes</th>
+        <th>Midterm Exam</th>
+        <th>Final Exam</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>5%</td><td>25%</td><td>20%</td><td>50%</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Schedule</h2>
+  <table class="sched">
+    <thead>
+      <tr>
+        <th class="week">Week</th>
+        <th class="topic">Topics</th>
+        <th>Slides</th>
+        <th>Quizzes</th>
+        <th>Assignments</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="week">1</td>
+        <td>
+          <div class="topic-main">Introduction to OOP</div>
+          <div class="topic-sub">Course Information, Procedural Programming, Global vs. Local Data, Four Pillars of OOP (Abstraction, Encapsulation, Inheritance, Polymorphism)</div>
+        </td>
+        <td class="slides"><a href="#">Slides</a></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="week">2</td>
+        <td>
+          <div class="topic-main">Classes and Objects</div>
+          <div class="topic-sub">Defining Classes, Creating Objects, Access Modifiers</div>
+        </td>
+        <td class="slides"><a href="#">Slides</a></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="week">3</td>
+        <td>
+          <div class="topic-main">Constructors</div>
+          <div class="topic-sub">Default and Parameterized Constructors, Initialization List, Constructor Overloading, Member Functions Defined Outside the Class</div>
+        </td>
+        <td class="slides"><a href="#">Slides</a></td>
+        <td>Q1</td>
+        <td>A1</td>
+      </tr>
+      <tr>
+        <td class="week">4</td>
+        <td>
+          <div class="topic-main">Passing and Returning Objects</div>
+          <div class="topic-sub">Pass Objects to Functions, Return Objects from Functions, Array of Objects</div>
+        </td>
+        <td class="slides"><a href="#">Slides</a></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="week">5</td>
+        <td>
+          <div class="topic-main">Static and Constant Members</div>
+          <div class="topic-sub">Static Variables, Static Data Members, Static Member Functions, Constant Member Functions, Static Constant Data Members, Constant Objects</div>
+        </td>
+        <td class="slides"><a href="#">Slides</a></td>
+        <td>Q2</td>
+        <td>A2</td>
+      </tr>
+      <tr>
+        <td class="week">6</td>
+        <td>
+          <div class="topic-main">Friend Functions and the <code>this</code> Pointer</div>
+          <div class="topic-sub">Friend Functions, Friend Classes, <code>this</code> Pointer, Cascading Function Calls</div>
+        </td>
+        <td class="slides"><a href="#">Slides</a></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="week">7</td>
+        <td>
+          <div class="topic-main">Copy Semantics and Destructors</div>
+          <div class="topic-sub">Copy Constructor (Default vs. User-Defined), Deep vs. Shallow Copy, Destructor</div>
+        </td>
+        <td class="slides"><a href="#">Slides</a></td>
+        <td>Q3</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="week">8</td>
+        <td>
+          <div class="topic-main">Midterm Exam</div>
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="week">9</td>
+        <td>
+          <div class="topic-main">Operator Overloading</div>
+          <div class="topic-sub">Overloading Arithmetic, Relational, and Stream Operators</div>
+        </td>
+        <td class="slides"><a href="#">Slides</a></td>
+        <td>Q4</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="week">10</td>
+        <td>
+          <div class="topic-main">Relationships Between Classes</div>
+          <div class="topic-sub">Association, Composition, and Aggregation</div>
+        </td>
+        <td class="slides"><a href="#">Slides</a></td>
+        <td></td>
+        <td>A3</td>
+      </tr>
+      <tr>
+        <td class="week">11</td>
+        <td>
+          <div class="topic-main">Inheritance</div>
+          <div class="topic-sub">Single Inheritance, Multiple Inheritance, Multi-Level Inheritance and Hybrid Inheritance</div>
+        </td>
+        <td class="slides"><a href="#">Slides</a></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="week">12</td>
+        <td>
+          <div class="topic-main">Polymorphism</div>
+          <div class="topic-sub">Function Overriding, Virtual Functions, Pure Virtual Functions, Abstract Classes vs. Interfaces</div>
+        </td>
+        <td class="slides"><a href="#">Slides</a></td>
+        <td>Q5</td>
+        <td>A4</td>
+      </tr>
+      <tr>
+        <td class="week">13</td>
+        <td>
+          <div class="topic-main">Virtual Destructors and Templates</div>
+          <div class="topic-sub">Virtual Destructors, Function Templates, Class Templates</div>
+        </td>
+        <td class="slides"><a href="#">Slides</a></td>
+        <td>Q6</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="week">14</td>
+        <td>
+          <div class="topic-main">Standard Template Library</div>
+          <div class="topic-sub">Containers, Iterators, and Algorithms</div>
+        </td>
+        <td class="slides"><a href="#">Slides</a></td>
+        <td></td>
+        <td>A5</td>
+      </tr>
+      <tr>
+        <td class="week">15</td>
+        <td>
+          <div class="topic-main">Exception Handling</div>
+          <div class="topic-sub"><code>try</code>, <code>catch</code>, <code>throw</code>, Exception Hierarchies</div>
+        </td>
+        <td class="slides"><a href="#">Slides</a></td>
+        <td>Q7</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="week">16</td>
+        <td>
+          <div class="topic-main">Introduction to Python</div>
+          <div class="topic-sub">Python Basics: Syntax, Variables, Data Types, Control Flow <br> OOP in Python: Classes and Objects, Comparison with C++</div>
+        </td>
+        <td class="slides"><a href="#">Slides</a></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Assignments</h2>
+  <ul class="res">
+    <li><a href="#">Assignment 1</a> Classes, Objects and Constructors</li>
+    <li><a href="#">Assignment 2</a> Static and Constant Members</li>
+    <li><a href="#">Assignment 3</a> Relationships Between Classes</li>
+    <li><a href="#">Assignment 4</a> Inheritance and Polymorphism</li>
+    <li><a href="#">Assignment 5</a> Standard Template Library</li>
+  </ul>
+
+  <h2>Project</h2>
+  <p>
+    Students will complete a semester-long project in groups of five, applying OOP principles
+    to a problem of their choosing. Proposal due Week 5; final submission and demo during the last week of the semester.
+  </p>
+
+  <h2>Policies</h2>
+  <p>
+    Attendance is mandatory. All submitted work must be your own; plagiarism will result in a zero grade for the assessment.
+  </p>
+
+ 
+
+	</div>
+	</div>
+</body>
+</html>
