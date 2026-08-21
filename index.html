@@ -165,14 +165,16 @@
 	{
 		margin-right: 20px;
 	}
-	td.profile_photo
+	.profile_header
 	{
-		width: 200px;
-		vertical-align: top;
+		display: flex;
+		align-items: flex-start;
+		gap: 15px;
 	}
-	td.profile_content
+	.profile_header h1
 	{
-		vertical-align: top;
+		margin: 0 0 10px 0;
+		font-size: 26px;
 	}
 </style>
 <script>
@@ -187,20 +189,16 @@
 <body>
 	<div id="container">
 	<div class='section_div'>
-	<table id="personal_info">
-	<tr>
-	<td class="profile_photo"><img class="photo_of_me" src="arbish2023.jpg" width=150px style="border: 1px solid black; margin-right:15px"/></td>
-	<td class="profile_content">
-	<div id="DocInfo">
-		<h1>Arbish Akram</h1>
-		<p>I completed my PhD in the Department of Computer Science at the University of the Punjab (PUCIT), advised by <a href='http://faculty.pucit.edu.pk/nazarkhan/'> Dr. Nazar Khan</a>. I am currently serving as a Lecturer in the Department of Computer Science at Government College University (GCU), Lahore. <br>
-	 	My research interests are in computer vision, machine learning, deep learning and image processing.</p>
-		<h4>arbishakram [at] gcu [dot] edu [dot] pk / arbishakram [at] gmail [dot] com</h4>		
-		<a href="https://scholar.google.com/citations?user=9uXz_dIAAAAJ">Google Scholar</a>
+	<div class="profile_header">
+		<img class="photo_of_me" src="arbish2023.jpg" width=130px style="border: 1px solid black"/>
+		<div id="DocInfo">
+			<h1>Arbish Akram</h1>
+			<p>I completed my PhD in the Department of Computer Science at the University of the Punjab (PUCIT), advised by <a href='http://faculty.pucit.edu.pk/nazarkhan/'> Dr. Nazar Khan</a>. I am currently serving as a Lecturer in the Department of Computer Science at Government College University (GCU), Lahore. <br>
+		 	My research interests are in computer vision, machine learning, deep learning and image processing.</p>
+			<h4>arbishakram [at] gcu [dot] edu [dot] pk / arbishakram [at] gmail [dot] com</h4>
+			<a href="https://scholar.google.com/citations?user=9uXz_dIAAAAJ">Google Scholar</a>
+		</div>
 	</div>
-	</td>
-	</tr>
-	</table>
 </div>
 <hr>
 	<div class='section_div' id='Teaching'>
