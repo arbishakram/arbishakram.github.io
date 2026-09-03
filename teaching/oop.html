@@ -74,11 +74,11 @@
   }
   table.sched td { padding: 6px 10px; border-bottom: 1px solid #E5E5E5; vertical-align: top; }
   table.sched tr:last-child td { border-bottom: none; }
-  table.sched .week { color: #9B9B9B; width: 52px; }
+  table.sched .Lecture { color: #9B9B9B; width: 52px; }
   table.sched .topic { width: auto; }
-  table.schedule td:nth-child(4), table.schedule th:nth-child(4) { width: 170px; }
-  table.sched .slides a { margin-right: 6px; }
+  table.schedule td:nth-child(n+3), table.schedule th:nth-child(n+3) { width: 170px; }
   table.sched .topic-main { color: #3B3B3B; font-weight: 700; }
+  table.sched .topic-main a, table.sched .topic-sub a { margin-right: 6px; }
   table.sched .topic-sub { color: #9B9B9B; font-size: 13px; margin-top: 2px; }
 
   ul.res { padding-left: 22px; font-size: 15px; margin-bottom: 12px; }
@@ -150,176 +150,175 @@
   <table class="sched schedule">
     <thead>
       <tr>
-        <th class="week">Week</th>
+        <th class="Lecture">Lecture</th>
         <th class="topic">Topics</th>
-        <th>Slides</th>
         <th>Quizzes</th>
         <th>Assignments</th>
+        <th>Tutorial</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td class="week">1</td>
+        <td class="Lecture">1-2</td>
         <td>
-          <div class="topic-main">Introduction to OOP</div>
+          <div class="topic-main"><a href="oop/lectures/1_introduction.pdf">Introduction to OOP</a></div>
           <div class="topic-sub">Course Information, Procedural Programming, Global vs. Local Data, Four Pillars of OOP (Abstraction, Encapsulation, Inheritance, Polymorphism)</div>
         </td>
-        <td class="slides"><a href="oop/lectures/1_introduction.pdf">Slides</a></td>
         <td></td>
         <td></td>
+        <td class="slides"><a href="oop/tutorials/multifile_programs_in_c++.pdf">Multifile programs in C++</a>
+        </td>
       </tr>
       <tr>
-        <td class="week">2</td>
+        <td class="Lecture">3-4</td>
         <td>
-          <div class="topic-main">Classes, Objects, and Constructors</div>
+          <div class="topic-main"><a href="oop/lectures/2_classes_objects_and_constructors.pdf">Classes, Objects, and Constructors</a></div>
           <div class="topic-sub">Defining Classes, Creating Objects, Access Modifiers, Default and Parameterized Constructors, Initialization List, Constructor Overloading, Member Functions Defined Outside the Class</div>
         </td>
-        <td class="slides"><a href="oop/lectures/2_classes_objects_and_constructors.pdf">Slides</a></td>
         <td>Quiz 1, Quiz 2</td>
+        <td></td>
         <td></td>
       </tr>
        <tr>
-        <td class="week">3</td>
+        <td class="Lecture">5</td>
         <td>
-          <div class="topic-main">Passing and Returning Objects</div>
-          <div class="topic-sub">Pass Objects to Functions, Return Objects from Functions, Array of Objects</div>
+          <div class="topic-main"><a href="oop/lectures/3_object_manipulation.pdf">Passing and Returning Objects</a></div>
+          <div class="topic-sub">Pass Objects to Functions, Return Objects from Functions, Array of Objects.</div>
         </td>
-        <td class="slides"><a href="oop/lectures/3_object_manipulation.pdf">Slides</a></td>
+        <td></td>
         <td></td>
         <td></td>
       </tr>
       <tr>
-        <td class="week">4</td>
+        <td class="Lecture">6</td>
         <td>
-          <div class="topic-main">Static and Constant Members</div>
+          <div class="topic-main"><a href="oop/lectures/4_this_pointer_and_cascading_function_calls.pdf">The <code>this</code> Pointer and Cascading Function Calls</a></div>
+          <div class="topic-sub"><code>this</code> Pointer, Cascading Function Calls</div>
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="Lecture">7</td>
+        <td>
+          <div class="topic-main"><a href="oop/lectures/5_statics_and_constant_members.pdf">Static and Constant Members</a></div>
           <div class="topic-sub">Static Variables, Static Data Members, Static Member Functions, Constant Member Functions, Static Constant Data Members, Constant Objects</div>
         </td>
-        <td class="slides"><a href="oop/lectures/4_statics_and_constant_members.pdf">Slides</a></td>
+        <td></td>
         <td></td>
         <td></td>
       </tr>
-      <tr>
-        <td class="week">5</td>
+      <!-- <tr>
+        <td class="Lecture">6</td>
         <td>
-          <div class="topic-main">Friend Functions and the <code>this</code> Pointer</div>
-          <div class="topic-sub">Friend Functions, Friend Classes, <code>this</code> Pointer, Cascading Function Calls</div>
+          <div class="topic-main">Friend Functions</div>
+          <div class="topic-sub">Friend Functions, Friend Classes</div>
         </td>
-        <td class="slides"><a href="#"></a></td>
         <td></td>
         <td></td>
       </tr>
       <tr>
-        <td class="week">6</td>
+        <td class="Lecture">7</td>
         <td>
           <div class="topic-main">Copy Constructor and Destructors</div>
           <div class="topic-sub">Copy Constructor (Default vs. User-Defined), Deep vs. Shallow Copy, Destructor</div>
         </td>
-        <td class="slides"><a href="#"></a></td>
         <td></td>
         <td></td>
       </tr>
       <tr>
-        <td class="week">7</td>
+        <td class="Lecture">8</td>
         <td>
           <div class="topic-main">Midterm Exam</div>
         </td>
         <td></td>
         <td></td>
-        <td></td>
       </tr>
       <tr>
-        <td class="week">8</td>
+        <td class="Lecture">9</td>
         <td>
           <div class="topic-main">Operator Overloading</div>
           <div class="topic-sub">Overloading Arithmetic, Relational, and Stream Operators</div>
         </td>
-        <td class="slides"><a href="#"></a></td>
         <td></td>
         <td></td>
       </tr>
       <tr>
-        <td class="week">9</td>
+        <td class="Lecture">10</td>
         <td>
           <div class="topic-main">Relationships Between Classes</div>
           <div class="topic-sub">Association, Composition, and Aggregation</div>
         </td>
-        <td class="slides"><a href="#"></a></td>
         <td></td>
         <td></td>
       </tr>
       <tr>
-        <td class="week">10</td>
+        <td class="Lecture">11</td>
         <td>
           <div class="topic-main">Inheritance</div>
           <div class="topic-sub">Single Inheritance, Multiple Inheritance, Multi-Level Inheritance and Hybrid Inheritance</div>
         </td>
-        <td class="slides"><a href="#"></a></td>
         <td></td>
         <td></td>
       </tr>
       <tr>
-        <td class="week">11</td>
+        <td class="Lecture">12</td>
         <td>
           <div class="topic-main">Polymorphism</div>
           <div class="topic-sub">Function Overriding, Virtual Functions, Pure Virtual Functions, Abstract Classes vs. Interfaces</div>
         </td>
-        <td class="slides"><a href="#"></a></td>
         <td></td>
         <td></td>
       </tr>
       <tr>
-        <td class="week">12</td>
+        <td class="Lecture">13</td>
         <td>
           <div class="topic-main">Virtual Destructors and Templates</div>
           <div class="topic-sub">Virtual Destructors, Function Templates, Class Templates</div>
         </td>
-        <td class="slides"><a href="#"></a></td>
         <td></td>
         <td></td>
       </tr>
       <tr>
-        <td class="week">13</td>
+        <td class="Lecture">14</td>
         <td>
           <div class="topic-main">Standard Template Library</div>
           <div class="topic-sub">Containers, Iterators, and Algorithms</div>
         </td>
-        <td class="slides"><a href="#"></a></td>
         <td></td>
         <td></td>
       </tr>
       <tr>
-        <td class="week">14</td>
+        <td class="Lecture">15</td>
         <td>
           <div class="topic-main">Exception Handling</div>
           <div class="topic-sub"><code>try</code>, <code>catch</code>, <code>throw</code>, Exception Hierarchies</div>
         </td>
-        <td class="slides"><a href="#"></a></td>
         <td></td>
         <td></td>
       </tr>
       <tr>
-        <td class="week">15</td>
+        <td class="Lecture">16</td>
         <td>
           <div class="topic-main">Introduction to Python</div>
           <div class="topic-sub">Python Basics: Syntax, Variables, Data Types, Control Flow <br> OOP in Python: Classes and Objects, Comparison with C++</div>
         </td>
-        <td class="slides"><a href="#"></a></td>
         <td></td>
         <td></td>
       </tr>
       <tr>
-        <td class="week">16</td>
+        <td class="Lecture">17</td>
         <td>
           <div class="topic-main">Final Exam</div>
         </td>
         <td></td>
         <td></td>
-        <td></td>
-      </tr>
+      </tr> -->
     </tbody>
   </table>
 
-  <h2>Assignments</h2>
+  <!-- <h2>Assignments</h2>
   <ul class="res">
     <li><a href="#">Assignment 1</a> Classes, Objects and Constructors</li>
     <li><a href="#">Assignment 2</a> Static and Constant Members</li>
@@ -337,7 +336,7 @@
   <h2>Policies</h2>
   <p>
     Attendance is mandatory. All submitted work must be your own; plagiarism will result in a zero grade for the assessment.
-  </p>
+  </p> -->
 
  
 
