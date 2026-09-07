@@ -9,8 +9,8 @@
   {
     width:1400px;
     text-align: center;
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-weight: 300;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 400;
     font-size:16px;
     background-color: #FFF;
   }
@@ -37,8 +37,19 @@
   }
   h4,h3,h2,h1
   {
-    color: #3B3B3B;
+    color: #222;
   }
+  .grading-line {
+    display: flex; flex-wrap: wrap; gap: 32px;
+    margin-bottom: 22px;
+  }
+  .grading-line .stat { text-align: left; }
+  .grading-line .stat .label {
+    display: block; font-family: Arial, sans-serif; font-size: 11px;
+    letter-spacing: 0.06em; text-transform: uppercase; color: #9B9B9B;
+    margin-bottom: 3px;
+  }
+  .grading-line .stat .value { font-size: 17px; font-weight: 700; color: #222; }
   h1 { font-size: 26px; font-weight: normal; margin-bottom: 4px; }
   h2 {
     font-size: 15px; font-weight: bold; letter-spacing: 0.05em;
@@ -70,16 +81,16 @@
   }
   table.sched th {
     text-align: left; padding: 7px 10px;
-    border-bottom: 1px solid #E5E5E5; font-weight: 700; color: #3B3B3B;
+    border-bottom: 1px solid #E5E5E5; font-weight: 700; color: #222;
   }
   table.sched td { padding: 6px 10px; border-bottom: 1px solid #E5E5E5; vertical-align: top; }
   table.sched tr:last-child td { border-bottom: none; }
   table.sched .Lecture { color: #9B9B9B; width: 52px; }
   table.sched .topic { width: auto; }
   table.schedule td:nth-child(n+3), table.schedule th:nth-child(n+3) { width: 170px; }
-  table.sched .topic-main { color: #3B3B3B; font-weight: 700; }
+  table.sched .topic-main { color: #222; font-weight: 700; }
   table.sched .topic-main a, table.sched .topic-sub a { margin-right: 6px; }
-  table.sched .topic-sub { color: #9B9B9B; font-size: 13px; margin-top: 2px; }
+  table.sched .topic-sub { color: #222; font-size: 13px; margin-top: 2px; }
 
   ul.res { padding-left: 22px; font-size: 15px; margin-bottom: 12px; }
   ul.res li { margin-bottom: 5px; }
@@ -132,19 +143,12 @@
 
 
   <h2>Grading</h2>
-  <table class="sched">
-    <thead>
-      <tr>
-        <th>Assignments</th>
-        <th>Quizzes</th>
-        <th>Midterm Exam</th>
-        <th>Final Exam</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>5%</td><td>25%</td><td>20%</td><td>50%</td></tr>
-    </tbody>
-  </table>
+  <div class="grading-line">
+    <div class="stat"><span class="label">Assignments</span><span class="value">5%</span></div>
+    <div class="stat"><span class="label">Quizzes</span><span class="value">25%</span></div>
+    <div class="stat"><span class="label">Midterm Exam</span><span class="value">20%</span></div>
+    <div class="stat"><span class="label">Final Exam</span><span class="value">50%</span></div>
+  </div>
 
   <h2>Schedule</h2>
   <table class="sched schedule">
