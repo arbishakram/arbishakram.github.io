@@ -85,10 +85,10 @@
   }
   table.sched td { padding: 6px 10px; border-bottom: 1px solid #E5E5E5; vertical-align: top; }
   table.sched tr:last-child td { border-bottom: none; }
-  table.sched .week { color: #9B9B9B; width: 52px; }
+  table.sched .Lecture { color: #9B9B9B; width: 52px; }
   table.sched .topic { width: auto; }
-  table.sched td:nth-child(6), table.sched th:nth-child(6) { width: 170px; }
-  table.sched .slides a { margin-right: 6px; }
+  table.sched td:nth-child(5), table.sched th:nth-child(5) { width: 170px; }
+  table.sched .topic-main a, table.sched .topic-sub a { margin-right: 6px; }
   table.sched .topic-main { color: #222; }
   table.sched .topic-sub { color: #222; font-size: 13px; margin-top: 2px; }
 
@@ -139,7 +139,6 @@
       <tr>
         <th class="Lecture">Lecture</th>
         <th class="topic">Topics</th>
-        <th>Slides</th>
         <th>Reading Material</th>
         <th>Tutorials</th>
         <th>Quizzes</th>
@@ -150,17 +149,15 @@
       <tr>
         <td class="Lecture">1</td>
         <td>
-          <div class="topic-main">Introduction</div>
+          <div class="topic-main"><a href="ml/lectures/1_introduction.pdf">Introduction</a></div>
         </td>
-        <td class="slides"><a href="ml/lectures/1_introduction.pdf">Slides</a></td>
         <td></td>
         <td></td>
         <td></td>
       </tr>
       <tr>
         <td class="Lecture">2-3</td>
-        <td>Curve Fitting</td>
-        <td class="slides"><a href="ml/lectures/2_curve_fitting.pdf">Slides</a></td>
+        <td><a href="ml/lectures/2_curve_fitting.pdf">Curve Fitting</a></td>
         <td>Bishop 1.1</td>
         <td><a href="ml/tutorials/Linear_Regression.ipynb">Tutorial 1: Linear Regression</a></td>
         <td></td>
@@ -168,8 +165,7 @@
       </tr>
        <tr>
         <td class="Lecture">4-6</td>
-        <td>Linear Regression</td>
-        <td class="slides"><a href="ml/lectures/3_linear_regression.pdf">Slides</a></td>
+        <td><a href="ml/lectures/3_linear_regression.pdf">Linear Regression</a></td>
         <td>Bishop 3.1.1</td>
         <td></td>
         <td>Quiz 1, Quiz 2</td>
@@ -177,8 +173,7 @@
       </tr>
       <tr>
         <td class="Lecture">7</td>
-        <td>Rules of Probability</td>
-        <td class="slides"><a href="ml/lectures/4_probability.pdf">Slides</a></td>
+        <td><a href="ml/lectures/4_probability.pdf">Rules of Probability</a></td>
         <td>Bishop 1.2</td>
         <td></td>
         <td></td>
@@ -186,11 +181,98 @@
       </tr>
       <tr>
         <td class="Lecture">8</td>
-        <td>Statistics</td>
-        <td class="slides"><a href="ml/lectures/5_statistics.pdf">Slides</a></td>
+        <td><a href="ml/lectures/5_statistics.pdf">Statistics</a></td>
         <td>Bishop 1.2.2</td>
         <td></td>
         <td>Quiz 3, Quiz 4</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="Lecture">9</td>
+        <td><a href="ml/lectures/6_loss_functions.pdf">Loss Functions</a></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="Lecture">10</td>
+        <td><a href="ml/lectures/7_activation_functions.pdf">Activation Functions</a></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="Lecture">11-12</td>
+        <td><a href="ml/lectures/8_neural_networks.pdf">Neural Networks</a></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="Lecture">13-14</td>
+        <td><a href="ml/lectures/9_backpropagation_and_vanishing_gradients.pdf">Backpropagation and Vanishing Gradients</a></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="Lecture">15-16</td>
+        <td><a href="ml/lectures/10_gradient_descent_and_variations.pdf">Gradient Descent and its Variations</a></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="Lecture">17</td>
+        <td><a href="ml/lectures/11_regularization.pdf">Regularization</a></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="Lecture">18</td>
+        <td><a href="ml/lectures/12_cnn.pdf">Convolutional Neural Network</a></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="Lecture">19-20</td>
+        <td><a href="ml/lectures/13_variations_of_cnn.pdf">Variations of CNN</a></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="Lecture">21</td>
+        <td><a href="ml/lectures/14_k-means_clustering.pdf">K-Means Clustering</a></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="Lecture">22</td>
+        <td><a href="ml/lectures/15_knn.pdf">K-Nearest Neighbor</a></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="Lecture">23</td>
+        <td><a href="ml/lectures/16_decision_trees.pdf">Decision Trees</a></td>
+        <td></td>
+        <td></td>
+        <td></td>
         <td></td>
       </tr>
 
