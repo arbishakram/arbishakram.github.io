@@ -1,0 +1,978 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="MfxpNiv0HZrHV7WBv1qOGAHf60DQnY-EjW4kFE38S6Y" />
+<meta name="description" content="Arbish Akram, Lecturer in Computer Science at GCU Lahore. Computer vision, machine learning and generative models.">
+<title>Arbish Akram</title>
+<style>
+	:root {
+		--bg: #ffffff;
+		--surface: #f6f7fb;
+		--text: #1d2230;
+		--muted: #5d6578;
+		--link: #1367a7;
+		--rule: #e3e6ee;
+		--space-1: #070b1f;
+		--space-2: #141a3d;
+		--space-3: #2a1a4a;
+		--gutter: clamp(16px, 3vw, 40px); /* left/right page margin */
+	}
+	@media (prefers-color-scheme: dark) {
+		:root:not([data-theme="light"]) {
+			--bg: #0d1020;
+			--surface: #151a30;
+			--text: #e6e8f0;
+			--muted: #9aa2b8;
+			--link: #7cc4ff;
+			--rule: #262c45;
+		}
+	}
+	:root[data-theme="dark"] {
+		--bg: #0d1020;
+		--surface: #151a30;
+		--text: #e6e8f0;
+		--muted: #9aa2b8;
+		--link: #7cc4ff;
+		--rule: #262c45;
+	}
+
+	* { box-sizing: border-box; }
+	html, body { margin: 0; }
+	body {
+		background: var(--bg);
+		color: var(--text);
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 1.6;
+	}
+	a:link, a:visited { color: var(--link); text-decoration: none; }
+	a:hover { text-decoration: underline; }
+
+	/* ---------- Hero: the cosmos ---------- */
+	#hero {
+		position: relative;
+		display: flex;
+		align-items: center;
+		padding: 32px var(--gutter) 28px; /* height follows the content */
+		overflow: hidden;
+		background:
+			radial-gradient(ellipse at 78% 30%, rgba(120, 70, 200, 0.35), transparent 55%),
+			radial-gradient(ellipse at 15% 85%, rgba(40, 120, 200, 0.28), transparent 50%),
+			radial-gradient(ellipse at 50% 50%, var(--space-2), var(--space-1) 75%);
+		color: #fff;
+		user-select: none;
+	}
+	/* Darkens the left side so the bio stays readable; the right side stays open sky. */
+	#hero::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+		pointer-events: none;
+		background: linear-gradient(90deg, rgba(7, 11, 31, 0.8) 0%, rgba(7, 11, 31, 0.55) 42%, rgba(7, 11, 31, 0) 72%);
+	}
+	#cosmos {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		display: block;
+		touch-action: manipulation;
+	}
+	#hero .intro {
+		position: relative;
+		z-index: 2;
+		width: 100%;
+		max-width: 1240px;
+		margin: 0;
+		pointer-events: none; /* clicks go through to the sky... */
+	}
+	#hero .intro a, #hero .intro .contact {
+		pointer-events: auto; /* ...except links and the email line */
+		user-select: text;
+	}
+	#hero .intro-head {
+		display: flex;
+		align-items: center;
+		gap: 22px;
+		margin-bottom: 14px;
+	}
+	#hero .intro img {
+		width: 112px; height: 112px;
+		object-fit: cover;
+		border-radius: 50%;
+		border: 2px solid rgba(255, 255, 255, 0.85);
+		box-shadow: 0 0 28px rgba(140, 180, 255, 0.45);
+		flex-shrink: 0;
+	}
+	#hero h1 {
+		margin: 0;
+		font-size: clamp(30px, 5vw, 46px);
+		font-weight: 600;
+		letter-spacing: 0.5px;
+		line-height: 1.15;
+		text-shadow: 0 2px 18px rgba(0, 0, 0, 0.6);
+	}
+	#hero .role { margin: 4px 0 0; color: #c9d3f5; font-size: 17px; }
+	#hero .bio {
+		max-width: 620px;
+		margin: 0 0 14px;
+		color: #e4e9fb;
+		font-size: 16.5px;
+		line-height: 1.65;
+		text-shadow: 0 1px 8px rgba(7, 11, 31, 0.9);
+	}
+	#hero .bio a { color: #9fd4ff; }
+	#hero .contact {
+		display: inline-block;
+		margin: 0 0 12px;
+		color: #c9d3f5;
+		font-size: 14.5px;
+		font-weight: 400;
+	}
+	#hero .links { margin: 0; }
+	#hero .pill {
+		display: inline-block;
+		padding: 6px 16px;
+		border: 1px solid rgba(159, 212, 255, 0.6);
+		border-radius: 999px;
+		color: #fff;
+		font-size: 14px;
+		background: rgba(159, 212, 255, 0.1);
+		transition: background 0.15s ease;
+	}
+	#hero .pill:hover { background: rgba(159, 212, 255, 0.25); text-decoration: none; }
+
+	.quip {
+		position: absolute;
+		z-index: 5;
+		max-width: 260px;
+		padding: 9px 13px;
+		border-radius: 12px;
+		background: rgba(255, 255, 255, 0.96);
+		color: #1d2230;
+		font-size: 14px;
+		font-weight: 500;
+		line-height: 1.35;
+		box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+		pointer-events: none;
+		transform: translate(-50%, calc(-100% - 14px)) scale(0.85);
+		opacity: 0;
+		transition: opacity 0.18s ease, transform 0.18s ease;
+	}
+	.quip.show { opacity: 1; transform: translate(-50%, calc(-100% - 14px)) scale(1); }
+	.quip.below { transform: translate(-50%, 14px) scale(0.85); }
+	.quip.below.show { transform: translate(-50%, 14px) scale(1); }
+	.quip .tag {
+		display: block;
+		font-size: 10px;
+		letter-spacing: 1.2px;
+		text-transform: uppercase;
+		color: #6b55c9;
+		margin-bottom: 2px;
+	}
+	.sr-only {
+		position: absolute; width: 1px; height: 1px; overflow: hidden;
+		clip: rect(0 0 0 0); white-space: nowrap;
+	}
+
+	/* ---------- Page body ---------- */
+	main { max-width: 1240px; margin: 0; padding: 0 var(--gutter) 60px; }
+	section { padding: 26px 0 8px; border-bottom: 1px solid var(--rule); }
+	section:last-of-type { border-bottom: 0; }
+	h2 { font-size: 22px; font-weight: 600; margin: 0 0 14px; }
+
+	table.teach_table { border-collapse: collapse; }
+	table.teach_table td { padding: 10px 24px 10px 0; border-bottom: 1px solid var(--rule); }
+	td.course_name { font-weight: 500; }
+	td.course_links { color: var(--muted); }
+
+	.pub {
+		display: flex;
+		gap: 24px;
+		align-items: center;
+		padding: 16px 0;
+	}
+	.pub .thumb {
+		flex: 0 0 240px;
+		display: flex;
+		justify-content: center;
+		background: #fff;
+		border-radius: 8px;
+		padding: 6px;
+	}
+	.pub .thumb img { max-width: 100%; max-height: 170px; display: block; }
+	.pub .title { font-weight: 600; }
+	.pub .venue { font-style: italic; }
+
+	@media (max-width: 640px) {
+		#hero { padding-top: 24px; }
+		#hero::after { background: rgba(7, 11, 31, 0.55); }
+		#hero .intro img { width: 76px; height: 76px; }
+		#hero .intro-head { gap: 16px; }
+		#hero .role { font-size: 14px; }
+		#hero .bio { font-size: 15.5px; }
+		.pub { flex-direction: column; align-items: flex-start; gap: 10px; }
+		.pub .thumb { flex-basis: auto; width: 100%; max-width: 300px; }
+		table.teach_table td { padding-right: 12px; }
+	}
+</style>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-24665197-4', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+<body>
+
+<header id="hero">
+	<canvas id="cosmos" aria-label="Animated sky of neurons, galaxies, planets and stars. Click any of them for a message."></canvas>
+	<div class="intro">
+		<div class="intro-head">
+			<img src="arbish2023.jpg" alt="Photo of Arbish Akram">
+			<div>
+				<h1>Arbish Akram</h1>
+				<p class="role">Lecturer, Computer Science &middot; GCU Lahore</p>
+			</div>
+		</div>
+		<p class="bio">I completed my PhD in the Department of Computer Science at the University of the Punjab (PUCIT), advised by <a href="http://faculty.pucit.edu.pk/nazarkhan/">Dr. Nazar Khan</a>. I am currently serving as a Lecturer in the Department of Computer Science at Government College University (GCU), Lahore.
+		My research interests are in computer vision, machine learning, deep learning and image processing.</p>
+		<p class="contact">arbishakram [at] gcu [dot] edu [dot] pk &nbsp;/&nbsp; arbishakram [at] gmail [dot] com</p>
+		<p class="links"><a class="pill" href="https://scholar.google.com/citations?user=9uXz_dIAAAAJ">Google Scholar</a></p>
+	</div>
+	<div id="quip-live" class="sr-only" aria-live="polite"></div>
+</header>
+
+<main>
+	<section id="Teaching">
+		<h2>Teaching</h2>
+		<table class="teach_table">
+			<tr>
+				<td class="course_name"><a href="teaching/pf.html">Programming Fundamentals</a></td>
+				<td class="course_links">Spring 25, Spring 26</td>
+			</tr>
+			<tr>
+				<td class="course_name"><a href="teaching/oop.html">Object-Oriented Programming</a></td>
+				<td class="course_links">Spring 25, Fall 25, Fall 26</td>
+			</tr>
+			<tr>
+				<td class="course_name"><a href="#">Introduction to Computer Vision</a></td>
+				<td class="course_links">Fall 25</td>
+			</tr>
+			<tr>
+				<td class="course_name"><a href="teaching/ml.html">Introduction to Machine Learning</a></td>
+				<td class="course_links">Fall 26</td>
+			</tr>
+		</table>
+	</section>
+
+	<section id="research">
+		<h2>Research</h2>
+
+		<div class="pub">
+			<div class="thumb"><img src="research/reggan/reggan_teaser.png" alt="RegGAN teaser"></div>
+			<div>
+				<span class="title">RegGAN: Improving Generative Adversarial Network Generalization for Facial Expression Synthesis</span>
+				<br>Arbish Akram, <a href="http://faculty.pucit.edu.pk/nazarkhan/">Nazar Khan</a> and <a href="https://itu.edu.pk/faculty-itu/dr-arif-mahmood/">Arif Mahmood</a>
+				<br><span class="venue">Multimedia Tools and Applications (MTAP, 2026)</span>.
+				<br>[<a href="https://link.springer.com/article/10.1007/s11042-026-21213-w">Paper</a>]
+				[<a href="https://arxiv.org/abs/2603.15648">arXiv</a>]
+				[<a href="https://github.com/arbishakram/RegGAN">Code</a>]
+				[<a href="research/reggan/reggan.txt">Bibtex</a>]
+			</div>
+		</div>
+
+		<div class="pub">
+			<div class="thumb"><img src="research/lsrf/lsrf_teaser.png" alt="LSRF teaser"></div>
+			<div>
+				<span class="title">LSRF: Localized and Sparse Receptive Fields for Linear Facial Expression Synthesis based on Global Face Context</span>
+				<br>Arbish Akram and <a href="http://faculty.pucit.edu.pk/nazarkhan/">Nazar Khan</a>
+				<br><span class="venue">Multimedia Tools and Applications (MTAP, 2023)</span>.
+				<br>[<a href="https://link.springer.com/article/10.1007/s11042-023-16822-8">Paper</a>]
+				[<a href="https://rdcu.be/dmkiU">SharedIt</a>]
+				[<a href="https://github.com/arbishakram/LSRF-FES">Code</a>]
+				[<a href="research/lsrf/bib.txt">Bibtex</a>]
+			</div>
+		</div>
+
+		<div class="pub">
+			<div class="thumb"><img src="research/sargan/sargan-teaser.png" alt="SARGAN teaser"></div>
+			<div>
+				<span class="title">SARGAN: Spatial Attention-based Residuals for Facial Expression Manipulation</span>
+				<br>Arbish Akram and <a href="http://faculty.pucit.edu.pk/nazarkhan/">Nazar Khan</a>
+				<br><span class="venue">IEEE Transactions on Circuits and Systems for Video Technology (TCSVT, 2023)</span>.
+				<br>[<a href="https://ieeexplore.ieee.org/document/10065495">Paper</a>]
+				[<a href="http://arxiv.org/abs/2303.17212">arXiv</a>]
+				[<a href="https://github.com/arbishakram/SARGAN">Code</a>]
+				[<a href="research/sargan/sargan.txt">Bibtex</a>]
+			</div>
+		</div>
+
+		<div class="pub">
+			<div class="thumb"><img src="research/usgan/usgan-teaser.jpg" alt="US-GAN teaser"></div>
+			<div>
+				<span class="title">US-GAN: On the importance of Ultimate Skip Connection for Facial Expression Synthesis</span>
+				<br>Arbish Akram and <a href="http://faculty.pucit.edu.pk/nazarkhan/">Nazar Khan</a>
+				<br><span class="venue">Multimedia Tools and Applications (MTAP, 2023)</span>.
+				<br>[<a href="https://link.springer.com/article/10.1007/s11042-023-15268-2">Paper</a>]
+				[<a href="https://rdcu.be/ddU2s">SharedIt</a>]
+				[<a href="https://arxiv.org/abs/2112.13002">arXiv</a>]
+				[<a href="https://github.com/arbishakram/US-GAN">Code</a>]
+				[<a href="research/usgan/usgan.txt">Bibtex</a>]
+			</div>
+		</div>
+
+		<div class="pub">
+			<div class="thumb"><img src="research/pixel-rr/pixel-rr.png" alt="Pixel-based FES teaser"></div>
+			<div>
+				<span class="title">Pixel-based Facial Expression Synthesis</span>
+				<br>Arbish Akram and <a href="http://faculty.pucit.edu.pk/nazarkhan/">Nazar Khan</a>
+				<br><span class="venue">25th International Conference on Pattern Recognition (ICPR 2021)</span>.
+				<br>[<a href="https://ieeexplore.ieee.org/abstract/document/9413065">Paper</a>]
+				[<a href="https://arxiv.org/abs/2010.14397">arXiv</a>]
+				[<a href="http://faculty.pucit.edu.pk/nazarkhan/work/expression_mapping/pixel_fes/ICPR2020_presentation.pdf">Slides</a>]
+				[<a href="http://faculty.pucit.edu.pk/nazarkhan/work/expression_mapping/pixel_fes/ICPR2020_poster.pdf">Poster</a>]
+				[<a href="research/pixel-rr/pixel_rr.txt">Bibtex</a>]
+			</div>
+		</div>
+
+		<div class="pub">
+			<div class="thumb"><img src="research/orthogan/orthogan_teaser.png" alt="OrthoGAN teaser"></div>
+			<div>
+				<span class="title">OrthoGAN: Visualizing teeth after Orthodontics treatment using Generative Models</span>
+				<br>Arbish Akram and <a href="http://faculty.pucit.edu.pk/nazarkhan/">Nazar Khan</a>
+				<br>[<a href="research/orthogan/orthogan_preprint.pdf">Preprint</a>]
+				[<a href="research/orthogan/orthogan.txt">Bibtex</a>]
+			</div>
+		</div>
+
+		<div class="pub">
+			<div class="thumb"><img src="research/mr/mr.png" alt="Masked regression teaser"></div>
+			<div>
+				<span class="title">Masked Linear Regression for Learning Local Receptive Fields for Facial Expression Synthesis</span>
+				<br><a href="http://faculty.pucit.edu.pk/nazarkhan/">Nazar Khan</a>, <b>Arbish Akram</b>, <a href="https://itu.edu.pk/faculty-itu/dr-arif-mahmood/">Arif Mahmood</a>, Sania Ashraf and Kashif Murtaza
+				<br><span class="venue">International Journal of Computer Vision (IJCV, 2020)</span>.
+				<br>[<a href="https://link.springer.com/content/pdf/10.1007/s11263-019-01256-3.pdf">Paper</a>]
+				[<a href="https://arxiv.org/abs/2011.09104">arXiv</a>]
+				[<a href="http://faculty.pucit.edu.pk/nazarkhan/work/expression_mapping/presentation_itu_15_10_2019.pdf">Slides</a>]
+				[<a href="https://github.com/arbishakram/masked_regression_code">Code</a>]
+				[<a href="research/mr/mr.txt">Bibtex</a>]
+			</div>
+		</div>
+
+		<div class="pub">
+			<div class="thumb"><img src="research/lifesavior/lifesavior.png" alt="Life Savior teaser"></div>
+			<div>
+				<span class="title">Life Savior: An Integrated Emergency Response System</span>
+				<br>Arbish Akram, Maria Anjum, Mariam Rehman, Hafsah Bukhary, Hifza Amir and Rafia Qaisar
+				<br><span class="venue">8th International Conference on Information Technology (ICIT, 2017)</span>.
+				<br>[<a href="https://ieeexplore.ieee.org/document/8079981">Paper</a>]
+				[<a href="research/lifesavior/lifesavior.txt">Bibtex</a>]
+			</div>
+		</div>
+	</section>
+</main>
+
+<script>
+(function () {
+	"use strict";
+
+	/* ---------------- Quips ---------------- */
+	var QUIPS = {
+		neuron: [
+			"I fired! (Relax, it's just an activation.)",
+			"ReLU-ctantly activated.",
+			"Vanishing gradient... I can't feel my weights.",
+			"Dropout! Taking the day off, p = 0.5.",
+			"Backprop is just me blaming my neighbours.",
+			"One neuron out of billions. Thanks for noticing me.",
+			"Synapse sent. Left on read.",
+			"Sigmoid mood: somewhere between 0 and 1.",
+			"Overfitting? I prefer 'very confident'.",
+			"Fired by Reviewer 2. Again.",
+			"Still waiting to activate. Like my funding approval.",
+			"Early-career neuron: 3 contracts, 0 weights converged.",
+			"I spike 1000 times a second. Admin wants it in triplicate.",
+			"My supervisor says I'm 'almost there'. Since 2019.",
+			"Activated by caffeine. Deactivated by email.",
+			"Weights updated. CV not.",
+			"Teaching load: 4 courses. Research load: also 4 courses.",
+			"Weak signal today. Like my excuse for missing the deadline."
+		],
+		galaxy: [
+			"100 billion stars, still fewer than my unread emails.",
+			"Discriminator says: real galaxy. Confidence 0.51.",
+			"Spiral arms, or a GAN's attempt at a cinnamon roll?",
+			"Spinning at 220 km/s. Deadlines still move faster.",
+			"Batch size: 400 billion stars. Don't ask about my GPU.",
+			"Dark matter: the hidden layer of the universe.",
+			"I contain multitudes. And at least one segfault.",
+			"Rejected: 'idea too galaxy-brained.' - Reviewer 2",
+			"Revise and resubmit since the Big Bang.",
+			"Light from here takes 2 million years. Same as peer review.",
+			"Spinning like a PhD student's to-do list.",
+			"Literature review: 400 billion papers. Skimmed 3 abstracts.",
+			"Bigger than my reading list. Barely.",
+			"Formed by collisions. Like most co-author disputes.",
+			"Still expanding. Like the scope of my thesis.",
+			"Impact factor: astronomical."
+		],
+		planet: [
+			"Planet detected. Bounding box IoU: 0.97.",
+			"Private members only. No friend functions allowed.",
+			"These rings? Decorative. Like unused #includes.",
+			"One year here = one semester of grading.",
+			"Pluto's ex. Please don't bring it up.",
+			"class Planet : public CelestialBody { /* overrides orbit() */ };",
+			"Still orbiting. Like students around a deadline.",
+			"Desk-rejected for being 'out of scope'. I'm a planet.",
+			"Orbiting the admin office. Form needs 4 more signatures.",
+			"Reviewer 2: 'Please cite my 14 papers on planets.'",
+			"Another meeting that could have been an email.",
+			"Camera-ready deadline? I'm still orbiting the first draft.",
+			"Grading 120 exam scripts. One orbit at a time.",
+			"Office hours: Tuesday. Students arrive: Thursday, 11:58 PM.",
+			"LaTeX compiled on the first try. Said no planet ever.",
+			"My attendance sheet has more signatures than my grant."
+		],
+		star: [
+			"Twinkle twinkle, little star, how I wonder what your gradients are.",
+			"I'm a star. Please cite me.",
+			"My light left 4 years ago. Reviewer 2 still hasn't replied.",
+			"static const Star sun; // never changes, always shines",
+			"Hydrogen in, light out. Simplest model I know.",
+			"Rated 5 stars. Obviously.",
+			"Reviewer 2 here. Major revisions. No reasons given.",
+			"Accepted! (As a poster. In the hallway. After lunch.)",
+			"Shining bright. Unlike my h-index.",
+			"I'd shine more, but I have three committee meetings.",
+			"Cited once. By myself.",
+			"Bright student. Never reads the course outline.",
+			"'Is this on the exam?' Yes. Everything is.",
+			"Shining since forever. Still waiting on contract renewal.",
+			"Plagiarism report: 0%. Truly original."
+		],
+		comet: [
+			"Shooting star! Wish for zero merge conflicts.",
+			"Late for office hours, gotta go!",
+			"Speedrunning the solar system, any%.",
+			"Racing the deadline. It's 11:59 AoE somewhere!",
+			"Was a full paper. Now a workshop abstract.",
+			"Submitted at 11:59:58. Living on the edge.",
+			"Passing by for a signature. Back in 76 years.",
+			"That was my weekend. Blink and you missed it."
+		],
+		void: [
+			"New star initialised with random weights.",
+			"Empty space. A null pointer, but cosmic.",
+			"You clicked the void. The void says hi.",
+			"Nothing here. Just like my free time.",
+			"Reviewer 3 never showed up either.",
+			"This is where rejected papers go to reflect.",
+			"Your research grant, visualised.",
+			"Peaceful. No emails, no meetings, no 'quick' admin forms.",
+			"Space reserved for research funding. Still empty.",
+			"The deadline extension you were hoping for.",
+			"The back row. Students' favourite seat.",
+			"Here lies the related work section I forgot to write.",
+			"No signal. Like the department Wi-Fi."
+		]
+	};
+	var TAGS = { neuron: "Neuron", galaxy: "Galaxy", planet: "Planet", star: "Star", comet: "Shooting star", void: "Deep space" };
+
+	// Shuffle-bag so quips don't repeat until all have been seen.
+	var bags = {};
+	function nextQuip(kind) {
+		if (!bags[kind] || !bags[kind].length) {
+			bags[kind] = QUIPS[kind].slice().sort(function () { return Math.random() - 0.5; });
+		}
+		return bags[kind].pop();
+	}
+
+	/* ---------------- Setup ---------------- */
+	var hero = document.getElementById("hero");
+	var canvas = document.getElementById("cosmos");
+	var ctx = canvas.getContext("2d");
+	var live = document.getElementById("quip-live");
+	var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+	var W = 0, H = 0, DPR = 1;
+	var TAU = Math.PI * 2;
+
+	function rand(a, b) { return a + Math.random() * (b - a); }
+	function pick(arr) { return arr[(Math.random() * arr.length) | 0]; }
+	function wrap(o, m) {
+		if (o.x < -m) o.x = W + m; else if (o.x > W + m) o.x = -m;
+		if (o.y < -m) o.y = H + m; else if (o.y > H + m) o.y = -m;
+	}
+
+	var stars = [], neurons = [], galaxies = [], planets = [], pulses = [], comets = [];
+	var mouse = { x: -9999, y: -9999, inside: false };
+
+	function makeStar(x, y) {
+		return { x: x, y: y, r: rand(0.4, 1.6), depth: rand(0.2, 1), phase: rand(0, TAU), tw: rand(0.6, 2.2), flare: 0 };
+	}
+
+	function makeGalaxy(x, y) {
+		var R = rand(38, 66), arms = pick([2, 2, 3]), parts = [];
+		var hues = [[170, 200, 255], [255, 190, 230], [200, 170, 255], [255, 220, 170]];
+		var col = pick(hues);
+		for (var i = 0; i < 240; i++) {
+			var t = Math.pow(Math.random(), 0.75);
+			var arm = i % arms;
+			parts.push({
+				a: arm * TAU / arms + t * 3.6 + rand(-0.35, 0.35) * (1 - t * 0.5),
+				r: t * R,
+				s: rand(0.5, 1.6),
+				al: rand(0.35, 0.95) * (1 - t * 0.55)
+			});
+		}
+		return {
+			x: x, y: y, vx: rand(-0.06, 0.06), vy: rand(-0.03, 0.03),
+			R: R, parts: parts, rot: rand(0, TAU), spin: rand(0.0012, 0.0025) * pick([-1, 1]),
+			tilt: rand(0.38, 0.65), orient: rand(0, Math.PI), col: col, boost: 0
+		};
+	}
+
+	function makePlanet(x, y) {
+		var palettes = [
+			["#ffd59a", "#d9813f", "#5a2a14"],
+			["#a8e6ff", "#3c8fd6", "#0f2c5c"],
+			["#e8c2ff", "#9a5ad6", "#2e1352"],
+			["#b8f5c8", "#3fae74", "#0e3d29"]
+		];
+		return {
+			x: x, y: y, vx: rand(-0.12, 0.12) || 0.05, vy: rand(-0.04, 0.04),
+			R: rand(9, 17), pal: pick(palettes), ring: Math.random() < 0.7,
+			ringTilt: rand(-0.5, 0.5), wobble: 0, t: rand(0, TAU)
+		};
+	}
+
+	function populate() {
+		stars = []; neurons = []; galaxies = []; planets = []; pulses = []; comets = [];
+		var nStars = Math.round(W * H / 2600);
+		for (var i = 0; i < nStars; i++) stars.push(makeStar(rand(0, W), rand(0, H)));
+
+		var nNeurons = Math.max(9, Math.min(24, Math.round(W / 65)));
+		for (i = 0; i < nNeurons; i++) {
+			neurons.push({
+				x: rand(0, W), y: rand(0, H * 0.8),
+				vx: rand(-0.18, 0.18), vy: rand(-0.12, 0.12),
+				r: rand(2.5, 4.5), glow: 0, cool: 0
+			});
+		}
+
+		var nGal = W < 640 ? 2 : 3;
+		for (i = 0; i < nGal; i++) galaxies.push(makeGalaxy(W * (i + 0.5) / nGal + rand(-60, 60), rand(H * 0.15, H * 0.55)));
+
+		// Planets in separate horizontal bands so they don't start on top of each other.
+		var nPl = W < 640 ? 1 : 2;
+		for (i = 0; i < nPl; i++) planets.push(makePlanet(W * (0.3 + 0.6 * (i + rand(0.15, 0.85)) / nPl), rand(H * 0.12, H * 0.6)));
+	}
+
+	function resize() {
+		var oldW = W, oldH = H;
+		DPR = Math.min(window.devicePixelRatio || 1, 2);
+		W = hero.clientWidth; H = hero.clientHeight;
+		canvas.width = Math.round(W * DPR);
+		canvas.height = Math.round(H * DPR);
+		ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+		if (!oldW) { populate(); return; }
+		// Keep everything where it was, proportionally.
+		var sx = W / oldW, sy = H / oldH;
+		[stars, neurons, galaxies, planets].forEach(function (list) {
+			list.forEach(function (o) { o.x *= sx; o.y *= sy; });
+		});
+		if (reduceMotion) draw(0);
+	}
+
+	/* ---------------- Simulation ---------------- */
+	var LINK = 150;
+
+	function neighbours(n) {
+		var out = [];
+		for (var i = 0; i < neurons.length; i++) {
+			var m = neurons[i];
+			if (m === n) continue;
+			var dx = m.x - n.x, dy = m.y - n.y;
+			if (dx * dx + dy * dy < LINK * LINK) out.push(m);
+		}
+		return out;
+	}
+
+	function fire(n, strength) {
+		n.glow = 1;
+		n.cool = 0.25;
+		var nb = neighbours(n);
+		for (var i = 0; i < nb.length; i++) {
+			if (Math.random() < strength) pulses.push({ a: n, b: nb[i], t: 0, speed: rand(1.4, 2.2) });
+		}
+	}
+
+	var spontaneous = 0, cometTimer = rand(4, 9);
+
+	function update(dt) {
+		var f = dt * 60; // normalise to ~60fps steps
+		var i, o;
+
+		for (i = 0; i < stars.length; i++) {
+			o = stars[i];
+			o.x -= 0.03 * o.depth * f;
+			o.phase += o.tw * dt;
+			if (o.flare > 0) o.flare = Math.max(0, o.flare - dt * 0.9);
+			wrap(o, 4);
+		}
+
+		for (i = 0; i < neurons.length; i++) {
+			o = neurons[i];
+			if (mouse.inside) {
+				var dx = mouse.x - o.x, dy = mouse.y - o.y, d2 = dx * dx + dy * dy;
+				if (d2 < 180 * 180 && d2 > 400) {
+					o.vx += dx / Math.sqrt(d2) * 0.004 * f;
+					o.vy += dy / Math.sqrt(d2) * 0.004 * f;
+				}
+			}
+			var sp = Math.hypot(o.vx, o.vy), max = 0.45;
+			if (sp > max) { o.vx *= max / sp; o.vy *= max / sp; }
+			o.x += o.vx * f; o.y += o.vy * f;
+			o.glow = Math.max(0, o.glow - dt * 1.6);
+			o.cool = Math.max(0, o.cool - dt);
+			wrap(o, 20);
+		}
+
+		for (i = pulses.length - 1; i >= 0; i--) {
+			o = pulses[i];
+			var len = Math.hypot(o.b.x - o.a.x, o.b.y - o.a.y) || 1;
+			o.t += o.speed * f / len;
+			if (o.t >= 1 || len > LINK * 1.3) {
+				pulses.splice(i, 1);
+				if (o.t >= 1 && o.b.cool <= 0 && pulses.length < 60) fire(o.b, 0.45); // chain reaction
+				else if (o.t >= 1) o.b.glow = Math.max(o.b.glow, 0.7);
+			}
+		}
+
+		spontaneous -= dt;
+		if (spontaneous <= 0 && neurons.length) {
+			fire(pick(neurons), 0.5);
+			spontaneous = rand(0.8, 2.0);
+		}
+
+		for (i = 0; i < galaxies.length; i++) {
+			o = galaxies[i];
+			o.x += o.vx * f; o.y += o.vy * f;
+			o.rot += (o.spin + o.spin * 14 * o.boost) * f;
+			o.boost = Math.max(0, o.boost - dt * 0.6);
+			wrap(o, o.R + 10);
+		}
+
+		for (i = 0; i < planets.length; i++) {
+			o = planets[i];
+			o.x += o.vx * f; o.y += o.vy * f;
+			o.t += dt;
+			o.wobble = Math.max(0, o.wobble - dt * 1.2);
+			wrap(o, o.R * 3);
+		}
+
+		cometTimer -= dt;
+		if (cometTimer <= 0) {
+			var fromLeft = Math.random() < 0.5;
+			comets.push({
+				x: fromLeft ? rand(-40, W * 0.4) : rand(W * 0.6, W + 40), y: rand(-30, H * 0.3),
+				vx: (fromLeft ? 1 : -1) * rand(5, 8), vy: rand(1.8, 3.2), life: 1
+			});
+			cometTimer = rand(6, 13);
+		}
+		for (i = comets.length - 1; i >= 0; i--) {
+			o = comets[i];
+			o.x += o.vx * f; o.y += o.vy * f;
+			o.life -= dt * 0.55;
+			if (o.life <= 0 || o.y > H + 50) comets.splice(i, 1);
+		}
+	}
+
+	/* ---------------- Drawing ---------------- */
+	function drawStars(time) {
+		for (var i = 0; i < stars.length; i++) {
+			var s = stars[i];
+			var a = 0.45 + 0.55 * Math.sin(s.phase) * 0.5 + 0.25 * s.depth;
+			ctx.globalAlpha = Math.min(1, Math.max(0.15, a));
+			ctx.fillStyle = "#fff";
+			ctx.beginPath();
+			ctx.arc(s.x, s.y, s.r * (1 + s.flare * 2.2), 0, TAU);
+			ctx.fill();
+			if (s.flare > 0) {
+				var L = 18 * s.flare + 4;
+				ctx.globalAlpha = s.flare;
+				ctx.strokeStyle = "#fff6c8";
+				ctx.lineWidth = 1.2;
+				ctx.beginPath();
+				ctx.moveTo(s.x - L, s.y); ctx.lineTo(s.x + L, s.y);
+				ctx.moveTo(s.x, s.y - L); ctx.lineTo(s.x, s.y + L);
+				ctx.stroke();
+			}
+		}
+		ctx.globalAlpha = 1;
+	}
+
+	function drawGalaxy(g) {
+		ctx.save();
+		ctx.translate(g.x, g.y);
+		ctx.rotate(g.orient);
+		var c = g.col;
+		var core = ctx.createRadialGradient(0, 0, 0, 0, 0, g.R * 0.55);
+		core.addColorStop(0, "rgba(255,250,235,0.95)");
+		core.addColorStop(0.25, "rgba(" + c[0] + "," + c[1] + "," + c[2] + ",0.45)");
+		core.addColorStop(1, "rgba(" + c[0] + "," + c[1] + "," + c[2] + ",0)");
+		ctx.fillStyle = core;
+		ctx.beginPath();
+		ctx.ellipse(0, 0, g.R * 0.55, g.R * 0.55 * g.tilt, 0, 0, TAU);
+		ctx.fill();
+
+		ctx.fillStyle = "rgb(" + c[0] + "," + c[1] + "," + c[2] + ")";
+		for (var i = 0; i < g.parts.length; i++) {
+			var p = g.parts[i];
+			var a = p.a + g.rot * (1.4 - p.r / g.R * 0.6); // inner parts spin a bit faster
+			ctx.globalAlpha = p.al;
+			ctx.fillRect(Math.cos(a) * p.r, Math.sin(a) * p.r * g.tilt, p.s, p.s);
+		}
+		ctx.globalAlpha = 1;
+		ctx.restore();
+	}
+
+	function drawPlanet(p) {
+		var s = 1 + Math.sin(p.wobble * 18) * p.wobble * 0.25;
+		var R = p.R * s;
+		ctx.save();
+		ctx.translate(p.x, p.y);
+		ctx.rotate(p.ringTilt);
+		if (p.ring) {
+			ctx.strokeStyle = "rgba(230,215,255,0.55)";
+			ctx.lineWidth = 2.2;
+			ctx.beginPath();
+			ctx.ellipse(0, 0, R * 2.1, R * 0.55, 0, Math.PI, TAU); // back half
+			ctx.stroke();
+		}
+		var grad = ctx.createRadialGradient(-R * 0.35, -R * 0.4, R * 0.1, 0, 0, R);
+		grad.addColorStop(0, p.pal[0]);
+		grad.addColorStop(0.55, p.pal[1]);
+		grad.addColorStop(1, p.pal[2]);
+		ctx.fillStyle = grad;
+		ctx.shadowColor = p.pal[1];
+		ctx.shadowBlur = 14 + p.wobble * 20;
+		ctx.beginPath();
+		ctx.arc(0, 0, R, 0, TAU);
+		ctx.fill();
+		ctx.shadowBlur = 0;
+		if (p.ring) {
+			ctx.strokeStyle = "rgba(230,215,255,0.75)";
+			ctx.beginPath();
+			ctx.ellipse(0, 0, R * 2.1, R * 0.55, 0, 0, Math.PI); // front half
+			ctx.stroke();
+		}
+		ctx.restore();
+	}
+
+	function drawNeurons() {
+		var i, j, a, b, dx, dy, d;
+		ctx.lineWidth = 1;
+		for (i = 0; i < neurons.length; i++) {
+			a = neurons[i];
+			for (j = i + 1; j < neurons.length; j++) {
+				b = neurons[j];
+				dx = a.x - b.x; dy = a.y - b.y;
+				d = Math.sqrt(dx * dx + dy * dy);
+				if (d < LINK) {
+					ctx.strokeStyle = "rgba(120,200,255," + (0.28 * (1 - d / LINK)) + ")";
+					ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+				}
+			}
+			if (mouse.inside) {
+				dx = a.x - mouse.x; dy = a.y - mouse.y;
+				d = Math.sqrt(dx * dx + dy * dy);
+				if (d < 180) {
+					ctx.strokeStyle = "rgba(255,210,140," + (0.4 * (1 - d / 180)) + ")";
+					ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke();
+				}
+			}
+		}
+
+		// Spikes travelling along synapses
+		for (i = 0; i < pulses.length; i++) {
+			var p = pulses[i];
+			var x = p.a.x + (p.b.x - p.a.x) * p.t, y = p.a.y + (p.b.y - p.a.y) * p.t;
+			var g = ctx.createRadialGradient(x, y, 0, x, y, 7);
+			g.addColorStop(0, "rgba(255,255,255,1)");
+			g.addColorStop(0.4, "rgba(140,220,255,0.8)");
+			g.addColorStop(1, "rgba(140,220,255,0)");
+			ctx.fillStyle = g;
+			ctx.beginPath(); ctx.arc(x, y, 7, 0, TAU); ctx.fill();
+		}
+
+		for (i = 0; i < neurons.length; i++) {
+			a = neurons[i];
+			var R = a.r * 4 + a.glow * 14;
+			var halo = ctx.createRadialGradient(a.x, a.y, 0, a.x, a.y, R);
+			halo.addColorStop(0, "rgba(160,225,255," + (0.35 + a.glow * 0.6) + ")");
+			halo.addColorStop(1, "rgba(160,225,255,0)");
+			ctx.fillStyle = halo;
+			ctx.beginPath(); ctx.arc(a.x, a.y, R, 0, TAU); ctx.fill();
+			ctx.fillStyle = a.glow > 0.3 ? "#ffffff" : "#bfe8ff";
+			ctx.beginPath(); ctx.arc(a.x, a.y, a.r + a.glow * 1.5, 0, TAU); ctx.fill();
+		}
+	}
+
+	function drawComets() {
+		for (var i = 0; i < comets.length; i++) {
+			var c = comets[i];
+			var tx = c.x - c.vx * 14, ty = c.y - c.vy * 14;
+			var g = ctx.createLinearGradient(c.x, c.y, tx, ty);
+			g.addColorStop(0, "rgba(255,255,255," + c.life + ")");
+			g.addColorStop(1, "rgba(255,255,255,0)");
+			ctx.strokeStyle = g;
+			ctx.lineWidth = 2;
+			ctx.beginPath(); ctx.moveTo(c.x, c.y); ctx.lineTo(tx, ty); ctx.stroke();
+		}
+	}
+
+	function draw(time) {
+		ctx.clearRect(0, 0, W, H);
+		drawStars(time);
+		ctx.globalCompositeOperation = "lighter";
+		for (var i = 0; i < galaxies.length; i++) drawGalaxy(galaxies[i]);
+		ctx.globalCompositeOperation = "source-over";
+		for (i = 0; i < planets.length; i++) drawPlanet(planets[i]);
+		drawNeurons();
+		drawComets();
+	}
+
+	/* ---------------- Interaction ---------------- */
+	function hitTest(x, y) {
+		var i, o, d, best = null, bestD = Infinity;
+		for (i = 0; i < comets.length; i++) {
+			o = comets[i];
+			if (Math.hypot(o.x - x, o.y - y) < 30) return { kind: "comet", obj: o };
+		}
+		for (i = 0; i < planets.length; i++) {
+			o = planets[i];
+			if (Math.hypot(o.x - x, o.y - y) < o.R + 8) return { kind: "planet", obj: o };
+		}
+		for (i = 0; i < neurons.length; i++) {
+			o = neurons[i];
+			if (Math.hypot(o.x - x, o.y - y) < o.r + 12) return { kind: "neuron", obj: o };
+		}
+		for (i = 0; i < galaxies.length; i++) {
+			o = galaxies[i];
+			if (Math.hypot(o.x - x, o.y - y) < o.R * 0.75) return { kind: "galaxy", obj: o };
+		}
+		for (i = 0; i < stars.length; i++) {
+			o = stars[i];
+			d = Math.hypot(o.x - x, o.y - y);
+			if (d < 10 && d < bestD) { best = o; bestD = d; }
+		}
+		return best ? { kind: "star", obj: best } : null;
+	}
+
+	var bubble = null, bubbleTimer = 0, clicks = 0;
+
+	function showQuip(kind, x, y, textOverride) {
+		var text = textOverride || nextQuip(kind);
+		if (bubble) bubble.remove();
+		bubble = document.createElement("div");
+		bubble.className = "quip";
+		var tag = document.createElement("span");
+		tag.className = "tag";
+		tag.textContent = textOverride ? "Achievement" : TAGS[kind];
+		bubble.appendChild(tag);
+		bubble.appendChild(document.createTextNode(text));
+		hero.appendChild(bubble);
+
+		var half = Math.min(130, bubble.offsetWidth / 2);
+		bubble.style.left = Math.max(half + 8, Math.min(W - half - 8, x)) + "px";
+		bubble.style.top = y + "px";
+		if (y < bubble.offsetHeight + 24) bubble.classList.add("below");
+		var b = bubble;
+		requestAnimationFrame(function () { b.classList.add("show"); });
+		live.textContent = text;
+
+		clearTimeout(bubbleTimer);
+		bubbleTimer = setTimeout(function () {
+			b.classList.remove("show");
+			setTimeout(function () { b.remove(); }, 250);
+		}, 3200);
+	}
+
+	function localPoint(e) {
+		var r = canvas.getBoundingClientRect();
+		return { x: e.clientX - r.left, y: e.clientY - r.top };
+	}
+
+	canvas.addEventListener("pointerdown", function (e) {
+		var p = localPoint(e);
+		var hit = hitTest(p.x, p.y);
+		clicks++;
+		if (hit) {
+			if (hit.kind === "neuron") fire(hit.obj, 1);
+			else if (hit.kind === "galaxy") hit.obj.boost = 1;
+			else if (hit.kind === "planet") hit.obj.wobble = 1;
+			else if (hit.kind === "star") hit.obj.flare = 1;
+			else if (hit.kind === "comet") hit.obj.life = Math.min(1, hit.obj.life + 0.4);
+		} else {
+			var s = makeStar(p.x, p.y);
+			s.r = 1.6; s.depth = 1; s.flare = 1;
+			stars.push(s);
+		}
+		if (clicks === 15) showQuip(null, p.x, p.y, "15 clicks! Your attendance would be perfect.");
+		else showQuip(hit ? hit.kind : "void", p.x, p.y);
+		if (reduceMotion) draw(0);
+	});
+
+	canvas.addEventListener("pointermove", function (e) {
+		var p = localPoint(e);
+		mouse.x = p.x; mouse.y = p.y; mouse.inside = true;
+		canvas.style.cursor = hitTest(p.x, p.y) ? "pointer" : "crosshair";
+	});
+	canvas.addEventListener("pointerleave", function () { mouse.inside = false; });
+
+	/* ---------------- Loop ---------------- */
+	var visible = true, last = 0, raf = 0;
+
+	function frame(t) {
+		raf = 0;
+		var dt = Math.min(0.05, (t - (last || t)) / 1000);
+		last = t;
+		update(dt);
+		draw(t);
+		schedule();
+	}
+	function schedule() {
+		if (!raf && visible && !document.hidden && !reduceMotion) raf = requestAnimationFrame(frame);
+	}
+
+	if ("IntersectionObserver" in window) {
+		new IntersectionObserver(function (entries) {
+			visible = entries[0].isIntersecting;
+			last = 0;
+			schedule();
+		}).observe(hero);
+	}
+	document.addEventListener("visibilitychange", function () { last = 0; schedule(); });
+	window.addEventListener("resize", resize);
+
+	resize();
+	if (reduceMotion) { update(0); draw(0); } else schedule();
+})();
+</script>
+
+<div style="display:none">
+<!-- GoStats JavaScript Based Code -->
+<script type="text/javascript" src="./files/counter.js.download"></script>
+<script type="text/javascript">_gos='c3.gostats.com';_goa=390583;
+_got=4;_goi=1;_goz=0;_god='hits';_gol='web page statistics from GoStats';if (typeof _GoStatsRun === 'function') _GoStatsRun();</script>
+</div>
+</body>
+</html>
